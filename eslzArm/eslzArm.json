@@ -980,7 +980,7 @@
             "ChangeTrackingVmPolicyAssignment": "[uri(deployment().properties.templateLink.uri, 'managementGroupTemplates/policyAssignments/DINE-ChangeTrackingVMPolicyAssignment.json')]",
             "ChangeTrackingVmArcPolicyAssignment": "[uri(deployment().properties.templateLink.uri, 'managementGroupTemplates/policyAssignments/DINE-ChangeTrackingVMArcPolicyAssignment.json')]",
             "ChangeTrackingVmssPolicyAssignment": "[uri(deployment().properties.templateLink.uri, 'managementGroupTemplates/policyAssignments/DINE-ChangeTrackingVMSSPolicyAssignment.json')]",
-            "MDFCDefenderSqlAma": "[uri(deployment().properties.templateLink.uri, 'managementGroupTemplates/policyAssignments/DINE-MDFCDefenderSQLAMAPolicyAssignment.json')]",
+            "MDFCDefenderSql": "[uri(deployment().properties.templateLink.uri, 'managementGroupTemplates/policyAssignments/DINE-MDFCDefenderSQLPolicyAssignment.json')]",
             "dataCollectionRuleMdfcDefenderSQL": "[uri(deployment().properties.templateLink.uri, 'resourceGroupTemplates/dataCollectionRule-DefenderSQL.json')]"
         },
         // Declaring deterministic deployment names
@@ -1078,7 +1078,7 @@
             "ChangeTrackingVmDeploymentName": "[take(concat('alz-ChangeTracking-VM', variables('deploymentSuffix')), 64)]",
             "ChangeTrackingVmArcDeploymentName": "[take(concat('alz-ChangeTracking-VMArc', variables('deploymentSuffix')), 64)]",
             "ChangeTrackingVmssDeploymentName": "[take(concat('alz-ChangeTracking-VMSS', variables('deploymentSuffix')), 64)]",
-            "MDFCDefenderSqlAmaDeploymentName": "[take(concat('alz-MDFCDefenderSqlAma', variables('deploymentSuffix')), 64)]",
+            "MDFCDefenderSqlDeploymentName": "[take(concat('alz-MDFCDefenderSql', variables('deploymentSuffix')), 64)]",
             "dataCollectionRuleMdfcDefenderSQLDeploymentName": "[take(concat('alz-DataCollectionRuleDefenderSQL', variables('deploymentSuffix')), 64)]"
         },
         "esLiteDeploymentNames": {
@@ -1351,7 +1351,7 @@
                     "enableAMBALandingZone": {
                         "value": "[parameters('enableMonitorLandingZones')]"
                     },
-                    "enableAMBAManagement": {
+                    "enableAMBnagement": {
                         "value": "[parameters('enableMonitorManagement')]"
                     },
                     "enableAMBAServiceHealth": {
@@ -1428,7 +1428,7 @@
                     "enableAMBALandingZone": {
                         "value": "[parameters('enableMonitorLandingZones')]"
                     },
-                    "enableAMBAManagement": {
+                    "enableAMBnagement": {
                         "value": "[parameters('enableMonitorManagement')]"
                     },
                     "enableAMBAServiceHealth": {
@@ -3388,11 +3388,11 @@
             }
         },
         {
-            // Assigning MDFC Defender for SQL AMA initiative to platform management group if condition is true
+            // Assigning MDFC Defender for SQL  initiative to platform management group if condition is true
             "condition": "[and(or(not(empty(parameters('managementSubscriptionId'))), not(empty(parameters('singlePlatformSubscriptionId')))), equals(parameters('enableLogAnalytics'), 'Yes'), equals(parameters('enableAscForSqlOnVm'), 'DeployIfNotExists'))]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
-            "name": "[variables('deploymentNames').MDFCDefenderSqlAmaDeploymentName]",
+            "name": "[variables('deploymentNames').MDFCDefenderSqlDeploymentName]",
             "scope": "[variables('scopes').platformManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
@@ -3403,7 +3403,7 @@
                 "mode": "Incremental",
                 "templateLink": {
                     "contentVersion": "1.0.0.0",
-                    "uri": "[variables('deploymentUris').MDFCDefenderSqlAma]"
+                    "uri": "[variables('deploymentUris').MDFCDefenderSql]"
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
@@ -3440,11 +3440,11 @@
             }
         },
         {
-            // Assigning MDFC Defender for SQL AMA initiative to landing zone management group if condition is true
+            // Assigning MDFC Defender for SQL  initiative to landing zone management group if condition is true
             "condition": "[and(or(not(empty(parameters('managementSubscriptionId'))), not(empty(parameters('singlePlatformSubscriptionId')))), equals(parameters('enableLogAnalytics'), 'Yes'), equals(parameters('enableAscForSqlOnVm'), 'DeployIfNotExists'))]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
-            "name": "[variables('deploymentNames').MDFCDefenderSqlAmaDeploymentName]",
+            "name": "[variables('deploymentNames').MDFCDefenderSqlDeploymentName]",
             "scope": "[variables('scopes').lzsManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
@@ -3455,7 +3455,7 @@
                 "mode": "Incremental",
                 "templateLink": {
                     "contentVersion": "1.0.0.0",
-                    "uri": "[variables('deploymentUris').MDFCDefenderSqlAma]"
+                    "uri": "[variables('deploymentUris').MDFCDefenderSql]"
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
