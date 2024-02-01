@@ -93,7 +93,7 @@
               "displayName": "[parameters('topLevelManagementGroupPrefix')]",
                 "details": {
                     "parent": {
-                    "id": "[parameters('ManagementGroupId')]"
+                    "id": "/"
                     }
                 }
             }
