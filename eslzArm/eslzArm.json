@@ -934,7 +934,7 @@
         // Declaring scopes that will be used for optional deployments, such as platform components (monitoring, networking, identity), policy assignments, subscription placement etc.
         "scopes": {
             "eslzRootManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
-            "platformManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue01'))]"
+            "platformManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue01'))]",
             "managementManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue05'))]",
             "connectivityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue06'))]",
             "identityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue07'))]",
