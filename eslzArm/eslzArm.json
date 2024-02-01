@@ -1161,7 +1161,7 @@
             "dataCollectionRuleVmInsights": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vminsights-01')]",
             "dataCollectionRuleChangeTracking": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-changetracking-01')]",
             "dataCollectionRuleMdfcDefenderSql": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-defendersql-01')]",
-            "userAssignedIdentity": "[concat('id-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), 'identity-01')]",
+            "userAssignedIdentity": "[concat('id-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-identity-01')]",
             "automationAccount": "[concat('aa-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-mgmt')]",
             "vpnGwName": "[concat('vpng-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
             "erGwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ergw-', parameters('connectivityLocation'))]",
