@@ -827,7 +827,7 @@
         },
         "userAssignedIdentityResourceGroup": {
             "type": "string",
-            "defaultValue": "rg-ama-prod-001",
+            "defaultValue": "rg-shs-cace-identities",
             "maxLength": 90,
             "metadata": {
                 "description": "Name of the resource group to be created for the User Assigned Managed Identity in each subscription."
