@@ -1408,19 +1408,19 @@
                         "value": "[parameters('telemetryOptOut')]"
                     },
                     "platformManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+                        "value": "[parameters('guidValue01')]"
                     },
                     "IdentityManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue07'))]"
+                        "value": "[parameters('guidValue07')]"
                     },
                     "managementManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue05'))]"
+                        "value": "[parameters('guidValue05')]"
                     },
                     "connectivityManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue06'))]"
+                        "value": "[parameters('guidValue06')]"
                     },
                     "LandingZoneManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue02'))]"
+                        "value": "[parameters('guidValue02')]"
                     },
                     "enableAMBAConnectivity": {
                         "value": "[parameters('enableMonitorConnectivity')]"
@@ -1485,19 +1485,19 @@
                         "value": "[parameters('telemetryOptOut')]"
                     },
                     "platformManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+                        "value": "[parameters('guidValue01')]"
                     },
                     "IdentityManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+                        "value": "[parameters('guidValue01')]"
                     },
                     "managementManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+                        "value": "[parameters('guidValue01')]"
                     },
                     "connectivityManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+                        "value": "[parameters('guidValue01')]"
                     },
                     "LandingZoneManagementGroup": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue02'))]"
+                        "value": "[parameters('guidValue02')]"
                     },
                     "enableAMBAConnectivity": {
                         "value": "[parameters('enableMonitorConnectivity')]"
@@ -1998,7 +1998,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').asbPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
@@ -2021,7 +2021,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').resourceDiagnosticsPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
@@ -2051,7 +2051,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').activityDiagnosticsPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
@@ -2079,7 +2079,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').costOptimizationDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion"
@@ -2103,7 +2103,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').zoneResilientDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion"
@@ -2127,7 +2127,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').resourceRgLocationDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion"
@@ -2151,7 +2151,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ascPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
@@ -2227,7 +2227,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').atpOssDbPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]"
@@ -2254,7 +2254,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').atpSqlDbPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]"
@@ -2281,7 +2281,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').mdEndpointsDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]"
@@ -2308,7 +2308,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').denyClassicResourcePolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]",
@@ -2336,7 +2336,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').denyVMUnmanagedDiskPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion"
@@ -2360,7 +2360,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').ascGovPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
@@ -4018,7 +4018,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').enforceACSBPolicyDeploymentName]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion"
