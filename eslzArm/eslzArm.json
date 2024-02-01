@@ -1298,6 +1298,39 @@
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                    },
+                    "guidValue00": {
+                        "value": "[parameters('guidValue00')]"
+                    },
+                    "guidValue01": {
+                        "value": "[parameters('guidValue01')]"
+                    },
+                    "guidValue02": {
+                        "value": "[parameters('guidValue02')]"
+                    },
+                    "guidValue03": {
+                        "value": "[parameters('guidValue03')]"
+                    },
+                    "guidValue04": {
+                        "value": "[parameters('guidValue04')]"
+                    },
+                    "guidValue05": {
+                        "value": "[parameters('guidValue05')]"
+                    },
+                    "guidValue06": {
+                        "value": "[parameters('guidValue06')]"
+                    },
+                    "guidValue07": {
+                        "value": "[parameters('guidValue07')]"
+                    },
+                    "guidValue08": {
+                        "value": "[parameters('guidValue08')]"
+                    },
+                    "guidValue09": {
+                        "value": "[parameters('guidValue09')]"
+                    },
+                    "guidValue10": {
+                        "value": "[parameters('guidValue10')]"
                     }
                 }
             }
