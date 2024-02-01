@@ -31,48 +31,37 @@
             }
         },
         "guidValue00": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue01": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue02": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue03": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue04": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue05": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue06": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue07": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue08": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue09": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         },
         "guidValue10": {
-          "type": "string",
-          "defaultValue": "[newGuid()]"
+          "type": "string"
         }
     },
     "variables": {
