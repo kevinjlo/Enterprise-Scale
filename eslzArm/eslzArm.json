@@ -9,6 +9,22 @@
                 "description": "Provide a prefix (max 10 characters, unique at tenant-scope) for the Management Group hierarchy and other resources created as part of Enterprise-scale."
             }
         },
+        "serviceLevel": {
+            "type": "string",
+            "defaultValue": "shs",
+            "maxLength": 6,
+            "metadata": {
+                "description": "Provide a prefix (max 6 characters) for the service level ('prd', 'shs', 'uat', etc)."
+            }
+        },
+        "abbreviatedRegion": {
+            "type": "string",
+            "defaultValue": "cace",
+            "maxLength": 4,
+            "metadata": {
+                "description": "Provide an abbreviated Region (max 4 characters) for the service level ('cace', 'caea', 'usw2', etc)."
+            }
+        },
         "singlePlatformSubscriptionId": {
             "type": "string",
             "defaultValue": "",
@@ -838,24 +854,25 @@
         // Declaring the prescriptive management group structure that will be used in the scope construction
         "mgmtGroups": {
             "eslzRoot": "[parameters('enterpriseScaleCompanyPrefix')]",
-            "platform": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'platform')]",
-            "management": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'management')]",
-            "connectivity": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'connectivity')]",
-            "identity": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'identity')]",
-            "lzs": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'landingzones')]",
-            "corp": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'corp')]",
-            "online": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'online')]",
-            "decommissioned": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'decommissioned')]",
-            "sandboxes": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'sandboxes')]"
+            "platform": "mg-platform",
+            "management": "mg-management",
+            "connectivity": "mg-connectivity",
+            "identity": "mg-identity",
+            "lzs": "mg-landingzones",
+            "corp": "mg-corp",
+            "online": "mg-online",
+            "pci": "mg-pci",
+            "decommissioned": "mg-decommissioned",
+            "sandboxes": "mg-sandboxes"
         },
         "mgmtGroupsLite": {
             "eslzRoot": "[parameters('enterpriseScaleCompanyPrefix')]",
-            "platform": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'platform')]",
-            "lzs": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'landingzones')]",
-            "corp": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'corp')]",
-            "online": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'online')]",
-            "decommissioned": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'decommissioned')]",
-            "sandboxes": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'sandboxes')]"
+            "platform": "mg-platform",
+            "lzs": "mg-landingzones",
+            "corp": "mg-corp",
+            "online": "mg-online",
+            "decommissioned": "mg-decommissioned",
+            "sandboxes": "mg-sandboxes"
         },
         "copy": [
             {
@@ -1088,33 +1105,32 @@
         },
         // Declaring deterministic names for Resource Groups that will be created for platform resources
         "platformRgNames": {
-            "mgmtRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-mgmt')]",
-            "connectivityRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vnethub-', parameters('connectivityLocation'))]",
-            "ddosRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ddos')]",
-            "privateDnsRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-privatedns')]",
-            "identityVnetRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vnet-', parameters('connectivityLocation'))]",
-            "lzVnetRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vnet-', parameters('connectivityLocation'))]"
-        },
+            "mgmtRg": "[concat('rg-', parameters('serviceLevel'), '-mgmt')]",
+            "connectivityRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet-connectivity')]",
+            "ddosRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-ddos')]",
+            "privateDnsRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-privatedns')]",
+            "identityVnetRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet-identity')]",
+            "lzVnetRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet')]"        },
         // Declaring deterministic names for platform resources that will be created
         "platformResourceNames": {
-            "logAnalyticsWorkspace": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-law')]",
-            "dataCollectionRuleVmInsights": "[concat('dcr-vminsights-prod-', parameters('connectivityLocation'), '-001')]",
-            "dataCollectionRuleChangeTracking": "[concat('dcr-changetracking-prod-', parameters('connectivityLocation'), '-001')]",
-            "dataCollectionRuleMdfcDefenderSql": "[concat('dcr-defendersql-prod-', parameters('connectivityLocation'), '-001')]",
-            "userAssignedIdentity": "[concat('id-ama-prod-', parameters('connectivityLocation'), '-001')]",
-            "automationAccount": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-aauto')]",
-            "vpnGwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vpngw-', parameters('connectivityLocation'))]",
-            "erGwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ergw-', parameters('connectivityLocation'))]",
-            "ddosName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ddos-', parameters('connectivityLocation'))]",
-            "azFwPolicyName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-azfwpolicy-', parameters('connectivityLocation'))]",
-            "azFwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-fw-', parameters('connectivityLocation'))]",
-            "azErGwIpName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-erpip-', parameters('connectivityLocation'))]",
-            "hubName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-hub-', parameters('connectivityLocation'))]",
-            "vwanName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vwan-', parameters('connectivityLocation'))]",
-            "azVpnGwIpName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-gwpip-', parameters('connectivityLocation'))]",
-            "azFwIpName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-fwpip-', parameters('connectivityLocation'))]",
-            "identityVnet": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vnet-', parameters('connectivityLocation'))]",
-            "lzVnet": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vnet-', parameters('connectivityLocation'))]"
+!            "logAnalyticsWorkspace": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-law')]",
+!            "dataCollectionRuleVmInsights": "[concat('dcr-vminsights-prod-', parameters('connectivityLocation'), '-001')]",
+!            "dataCollectionRuleChangeTracking": "[concat('dcr-changetracking-prod-', parameters('connectivityLocation'), '-001')]",
+!            "dataCollectionRuleMdfcDefenderSql": "[concat('dcr-defendersql-prod-', parameters('connectivityLocation'), '-001')]",
+!            "userAssignedIdentity": "[concat('id-ama-prod-', parameters('connectivityLocation'), '-001')]",
+            "automationAccount": "[concat('aa-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
+            "vpnGwName": "[concat('vpng-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
+ !           "erGwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ergw-', parameters('connectivityLocation'))]",
+            "ddosName": "[concat('ddos-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
+            "azFwPolicyName": "[concat('afwp-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
+            "azFwName": "[concat('afw-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
+            "azErGwIpName": "[concat('pip4-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-ErGw')]",
+            "hubName": "[concat('vnet-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-hub')]",
+            "vwanName": "[concat('vwan-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), 'vwan')]",
+            "azVpnGwIpName": "[concat('pip4-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vpngw')]",
+            "azFwIpName": "[concat('pip4-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-fw')]",
+            "identityVnet": "[concat('vnet-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-identity')]",
+            "lzVnet": "[concat('vnet-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-lzvnet')]"
         },
         // Declaring deterministic resourceId's for platform resources that will be created
         "singleVsDedicatedMgmtSub": "[if(empty(parameters('managementSubscriptionId')), parameters('singlePlatformSubscriptionId'), parameters('managementSubscriptionId'))]",
