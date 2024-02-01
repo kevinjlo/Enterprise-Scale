@@ -133,6 +133,30 @@
                             }
                         },
                         {
+                            "name": "serviceLevel",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "Service level (shs, prd, etc)",
+                            "toolTip": "",
+                            "defaultValue": "shs",
+                            "constraints": {
+                                "required": true,
+                                "regex": "^[a-z0-9A-Z-]{1,6}$",
+                                "validationMessage": "The prefix must be 1-6 characters."
+                            }
+                        },
+                        {
+                            "name": "abbreviatedRegion",
+                            "type": "Microsoft.Common.TextBox",
+                            "label": "region (cace, caea, etc)",
+                            "toolTip": "",
+                            "defaultValue": "cace",
+                            "constraints": {
+                                "required": true,
+                                "regex": "^[a-z0-9A-Z-]{1,4}$",
+                                "validationMessage": "The prefix must be 1-4 characters."
+                            }
+                        },
+                        {
                             "name": "platformSubscription",
                             "type": "Microsoft.Common.OptionsGroup",
                             "label": "Platform subscription options",
