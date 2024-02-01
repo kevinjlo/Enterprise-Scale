@@ -8,6 +8,12 @@
                 "description": "Provide prefix for all management groups."
             }
         },
+        "topLevelManagementGroupPrefix": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide name of top management groups."
+            }
+        },
         "topLevelManagementGroupName": {
             "type": "string",
             "metadata": {
