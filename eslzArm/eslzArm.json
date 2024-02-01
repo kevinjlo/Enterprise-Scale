@@ -1585,7 +1585,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue05'))]"
+                        "value": "[parameters('guidValue05')]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('managementSubscriptionId')]"
@@ -1612,7 +1612,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue06'))]"
+                        "value": "[parameters('guidValue06')]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('connectivitySubscriptionId')]"
@@ -1639,7 +1639,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue07'))]"
+                        "value": "[parameters('guidValue07')]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('identitySubscriptionId')]"
