@@ -942,7 +942,7 @@
             "corpManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue09'))]",
             "onlineManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue08'))]",
             "decommissionedManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue04'))]",
-            "sandboxManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue03'))]",
+            "sandboxManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue03'))]"
         },
         // Declaring root uris for external dependency repositories.
         "rootUris": {
