@@ -1149,7 +1149,7 @@
         },
         // Declaring deterministic names for Resource Groups that will be created for platform resources
         "platformRgNames": {
-            "mgmtRg": "[concat('rg-', parameters('serviceLevel'), '-mgmt')]",
+            "mgmtRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-mgmt')]",
             "connectivityRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet-connectivity')]",
             "ddosRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-ddos')]",
             "privateDnsRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-privatedns')]",
@@ -1157,12 +1157,12 @@
             "lzVnetRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet')]"        },
         // Declaring deterministic names for platform resources that will be created
         "platformResourceNames": {
-            "logAnalyticsWorkspace": "[concat('log-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
-            "dataCollectionRuleVmInsights": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vminsights-001')]",
-            "dataCollectionRuleChangeTracking": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-changetracking-001')]",
-            "dataCollectionRuleMdfcDefenderSql": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-defendersql-001')]",
-            "userAssignedIdentity": "[concat('id-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-001')]",
-            "automationAccount": "[concat('aa-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
+            "logAnalyticsWorkspace": "[concat('log-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-mgmt')]",
+            "dataCollectionRuleVmInsights": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vminsights-01')]",
+            "dataCollectionRuleChangeTracking": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-changetracking-01')]",
+            "dataCollectionRuleMdfcDefenderSql": "[concat('dcr-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-defendersql-01')]",
+            "userAssignedIdentity": "[concat('id-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), 'identity-01')]",
+            "automationAccount": "[concat('aa-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-mgmt')]",
             "vpnGwName": "[concat('vpng-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
             "erGwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ergw-', parameters('connectivityLocation'))]",
             "ddosName": "[concat('ddos-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'))]",
