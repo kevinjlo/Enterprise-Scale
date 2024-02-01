@@ -2,10 +2,22 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "topLevelManagementGroupPrefix": {
+        "ManagementGroupPrefix": {
             "type": "string",
             "metadata": {
-                "description": "Provide prefix for the management group structure."
+                "description": "Provide prefix for all management groups."
+            }
+        },
+        "topLevelManagementGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide name of top management groups."
+            }
+        },
+        "ManagementGroupId": {
+            "type": "string",
+            "metadata": {
+                "description": "Tenant ID."
             }
         },
         "platformMgs": {
@@ -22,45 +34,95 @@
         "landingZoneMgs": {
             "type": "array",
             "defaultValue": [
+                "corp",
                 "online",
-                "corp"
+                "pci"
             ],
             "metadata": {
                 "description": "These are the landing zone management groups."
             }
+        },
+        "guidValue00": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue01": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue02": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue03": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue04": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue05": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue06": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue07": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue08": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue09": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
+        },
+        "guidValue10": {
+          "type": "string",
+          "defaultValue": "[newGuid()]"
         }
     },
     "variables": {
         "enterpriseScaleManagementGroups": {
-            "platform": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'platform')]",
-            "landingZone": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'landingzones')]",
-            "decommissioned": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'decommissioned')]",
-            "sandboxes": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'sandboxes')]"
+            "platform": "[concat(parameters('ManagementGroupPrefix'), '-', 'platform')]",
+            "landingZone": "[concat(parameters('ManagementGroupPrefix'), '-', 'landingzones')]",
+            "decommissioned": "[concat(parameters('ManagementGroupPrefix'), '-', 'decommissioned')]",
+            "sandboxes": "[concat(parameters('ManagementGroupPrefix'), '-', 'sandboxes')]"
         }
     },
     "resources": [
         {
             // Create top level management group under tenant root
             "type": "Microsoft.Management/managementGroups",
-            "scope": "/",
             "apiVersion": "2020-05-01",
-            "name": "[parameters('topLevelManagementGroupPrefix')]",
-            "properties": {}
+            "name": "[parameters('guidValue00')]",
+            "properties": {
+              "displayName": "[parameters('topLevelManagementGroupName')]",
+                "details": {
+                    "parent": {
+                    "id": "[parameters('ManagementGroupId')]"
+                    }
+                }
+            }
         },
         {
             // Create management group for platform management groups
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "scope": "/",
-            "name": "[variables('enterpriseScaleManagementGroups').platform]",
+            "name": "[parameters('guidValue01')]",
             "dependsOn": [
-                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
             ],
             "properties": {
                 "displayName": "[variables('enterpriseScaleManagementGroups').platform]",
                 "details": {
                     "parent": {
-                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
                     }
                 }
             }
@@ -69,16 +131,15 @@
             // Create management group for landing zones
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "scope": "/",
-            "name": "[variables('enterpriseScaleManagementGroups').landingZone]",
+            "Name": "[parameters('guidValue02')]",
             "dependsOn": [
-                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
             ],
             "properties": {
                 "displayName": "[variables('enterpriseScaleManagementGroups').landingZone]",
                 "details": {
                     "parent": {
-                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
                     }
                 }
             }
@@ -87,16 +148,15 @@
             // Create management group for sandbox subscriptions
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "scope": "/",
-            "name": "[variables('enterpriseScaleManagementGroups').sandboxes]",
+            "name": "[parameters('guidValue03')]",
             "dependsOn": [
-                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
             ],
             "properties": {
                 "displayName": "[variables('enterpriseScaleManagementGroups').sandboxes]",
                 "details": {
                     "parent": {
-                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
                     }
                 }
             }
@@ -105,62 +165,120 @@
             // Create management group for decommissioned subscriptions
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "scope": "/",
-            "name": "[variables('enterpriseScaleManagementGroups').decommissioned]",
+            "name": "[parameters('guidValue04')]",
             "dependsOn": [
-                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
             ],
             "properties": {
                 "displayName": "[variables('enterpriseScaleManagementGroups').decommissioned]",
                 "details": {
                     "parent": {
-                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]"
                     }
                 }
             }
-        },        
+        },
         {
             // Create child management groups for platform resources
-            "condition": "[not(empty(parameters('platformMgs')))]",
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "scope": "/",
-            "name": "[concat(parameters('topLevelManagementGroupPrefix'), '-', parameters('platformMgs')[copyIndex()])]",
+            "name": "[parameters('guidValue05')]",
             "dependsOn": [
-                "[tenantResourceId('Microsoft.Management/managementGroups', variables('enterpriseScaleManagementGroups').platform)]"
+                "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
             ],
-            "copy": {
-                "name": "platformMgCopy",
-                "count": "[length(parameters('platformMgs'))]"
-            },
+
             "properties": {
-                "displayName": "[concat(parameters('topLevelManagementGroupPrefix'), '-', parameters('platformMgs')[copyIndex()])]",
+                "displayName": "[concat(parameters('ManagementGroupPrefix'), '-', 'management')]",
                 "details": {
                     "parent": {
-                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('enterpriseScaleManagementGroups').platform)]"
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue01'))]"
+                    }
+                }
+            }
+        },
+        {
+            // Create child management groups for platform resources
+            "type": "Microsoft.Management/managementGroups",
+            "apiVersion": "2020-05-01",
+            "name": "[parameters('guidValue06')]",
+            "dependsOn": [
+                "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+            ],
+
+            "properties": {
+                "displayName": "[concat(parameters('ManagementGroupPrefix'), '-', 'connectivity')]",
+                "details": {
+                    "parent": {
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue01'))]"
+                    }
+                }
+            }
+        },
+        {
+            // Create child management groups for platform resources
+            "type": "Microsoft.Management/managementGroups",
+            "apiVersion": "2020-05-01",
+            "name": "[parameters('guidValue07')]",
+            "dependsOn": [
+                "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+            ],
+
+            "properties": {
+                "displayName": "[concat(parameters('ManagementGroupPrefix'), '-', 'identity')]",
+                "details": {
+                    "parent": {
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue01'))]"
                     }
                 }
             }
         },
         {
             // Create child management groups for landing zones
-            "condition": "[not(empty(parameters('landingZoneMgs')))]",
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "scope": "/",
-            "name": "[concat(parameters('topLevelManagementGroupPrefix'), '-', parameters('landingZoneMgs')[copyIndex()])]",
+            "name": "[parameters('guidValue08')]",
             "dependsOn": [
-                "[tenantResourceId('Microsoft.Management/managementGroups/', variables('enterpriseScaleManagementGroups').landingZone)]"
+                "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue02'))]"
             ],
-            "copy": {
-                "name": "lzMgCopy",
-                "count": "[length(parameters('landingZoneMgs'))]"
-            },
             "properties": {
-                "displayName": "[concat(parameters('topLevelManagementGroupPrefix'), '-', parameters('landingZoneMgs')[copyIndex()])]",
+                "displayName": "[concat(parameters('ManagementGroupPrefix'), '-', 'online')]",
                 "details": {
                     "parent": {
-                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('enterpriseScaleManagementGroups').landingZone)]"
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue02'))]"
+                    }
+                }
+            }
+        },
+        {
+            // Create child management groups for landing zones
+            "type": "Microsoft.Management/managementGroups",
+            "apiVersion": "2020-05-01",
+            "name": "[parameters('guidValue09')]",
+            "dependsOn": [
+                "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue02'))]"
+            ],
+            "properties": {
+                "displayName": "[concat(parameters('ManagementGroupPrefix'), '-', 'corp')]",
+                "details": {
+                    "parent": {
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue02'))]"
+                    }
+                }
+            }
+        },
+        {
+            // Create child management groups for landing zones
+            "type": "Microsoft.Management/managementGroups",
+            "apiVersion": "2020-05-01",
+            "name": "[parameters('guidValue10')]",
+            "dependsOn": [
+                "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue02'))]"
+            ],
+            "properties": {
+                "displayName": "[concat(parameters('ManagementGroupPrefix'), '-', 'pci')]",
+                "details": {
+                    "parent": {
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue02'))]"
                     }
                 }
             }
