@@ -1376,7 +1376,8 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
                     }
                 }
             }
