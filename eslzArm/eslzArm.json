@@ -933,16 +933,16 @@
         
         // Declaring scopes that will be used for optional deployments, such as platform components (monitoring, networking, identity), policy assignments, subscription placement etc.
         "scopes": {
-            "eslzRootManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').eslzRoot)]",
-            "platformManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').platform)]",
-            "managementManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').management)]",
-            "connectivityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').connectivity)]",
-            "identityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').identity)]",
-            "lzsManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').lzs)]",
-            "corpManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').corp)]",
-            "onlineManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').online)]",
-            "decommissionedManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').decommissioned)]",
-            "sandboxManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroups').sandboxes)]"
+            "eslzRootManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
+            "platformManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue01'))]"
+            "managementManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue05'))]",
+            "connectivityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue06'))]",
+            "identityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue07'))]",
+            "lzsManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue02'))]",
+            "corpManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue09'))]",
+            "onlineManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue08'))]",
+            "decommissionedManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue04'))]",
+            "sandboxManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue03'))]",
         },
         // Declaring root uris for external dependency repositories.
         "rootUris": {
