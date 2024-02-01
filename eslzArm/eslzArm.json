@@ -9,22 +9,6 @@
                 "description": "Provide a prefix (max 10 characters, unique at tenant-scope) for the Management Group hierarchy and other resources created as part of Enterprise-scale."
             }
         },
-        "serviceLevel": {
-            "type": "string",
-            "defaultValue": "shs",
-            "maxLength": 6,
-            "metadata": {
-                "description": "Provide a prefix (max 6 characters) for the service level ('prd', 'shs', 'uat', etc)."
-            }
-        },
-        "abbreviatedRegion": {
-            "type": "string",
-            "defaultValue": "cace",
-            "maxLength": 4,
-            "metadata": {
-                "description": "Provide an abbreviated Region (max 4 characters) for the service level ('cace', 'caea', 'usw2', etc)."
-            }
-        },
         "singlePlatformSubscriptionId": {
             "type": "string",
             "defaultValue": "",
@@ -847,6 +831,22 @@
             "maxLength": 90,
             "metadata": {
                 "description": "Name of the resource group to be created for the User Assigned Managed Identity in each subscription."
+            }
+        },
+        "serviceLevel": {
+            "type": "string",
+            "defaultValue": "shs",
+            "maxLength": 6,
+            "metadata": {
+                "description": "Provide a prefix (max 6 characters) for the service level ('prd', 'shs', 'uat', etc)."
+            }
+        },
+        "abbreviatedRegion": {
+            "type": "string",
+            "defaultValue": "cace",
+            "maxLength": 4,
+            "metadata": {
+                "description": "Provide an abbreviated Region (max 4 characters) for the service level ('cace', 'caea', 'usw2', etc)."
             }
         }
     },
