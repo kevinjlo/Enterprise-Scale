@@ -3523,8 +3523,9 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleChangeTrackingResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //2024-02-06-13:53//"value": "[parameters('guidValue00')]"
+                        //02-01-5:55//
+		        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmHybridMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
