@@ -1312,9 +1312,7 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
-
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "guidValue00": {
                         "value": "[parameters('guidValue00')]"
@@ -1924,8 +1922,8 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     },
                     "rgName": {
@@ -2056,8 +2054,8 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     },
                     "logAnalyticsResourceId": {
@@ -2089,8 +2087,8 @@
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     }
                 }
@@ -2115,8 +2113,8 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     }
                 }
