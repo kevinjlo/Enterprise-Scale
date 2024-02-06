@@ -925,13 +925,13 @@
 
 
         "mgmtGroupsLite": {
-            "eslzRoot": "[parameters('enterpriseScaleCompanyPrefix')]",
-            "platform": "mg-platform",
-            "lzs": "mg-landingzones",
-            "corp": "mg-corp",
-            "online": "mg-online",
-            "decommissioned": "mg-decommissioned",
-            "sandboxes": "mg-sandboxes"
+            "eslzRoot": "[parameters('guidValue00')]",
+            "platform": "[parameters('guidValue01')]",
+            "lzs": "[parameters('guidValue02')]",
+            "corp": "[parameters('guidValue09')]",
+            "online": "[parameters('guidValue08')]",
+            "decommissioned": "[parameters('guidValue04')]",
+            "sandboxes": "[parameters('guidValue03')]"
         },
         "copy": [
             {
@@ -942,7 +942,7 @@
             {
                 "name": "mgmtGroupsESLiteArray",
                 "count": "[length(items(variables('mgmtGroupsLite')))]",
-                "input": "[items(variables('mgmtGroupsLite'))[copyIndex('mgmtGroupsESLiteArray')].value]"
+                "input": "[items(variables('mgmtGroupUUIDs'))[copyIndex('mgmtGroupsESLiteArray')].value]"
             }
         ],
         
@@ -3166,7 +3166,7 @@
                         "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "enforcementMode": {
-                        "value": "DoNotEnforce"
+                        "value": "Default"
                     },
                     "userAssignedManagedIdentityResourceGroup": {
                         "value": "[parameters('userAssignedIdentityResourceGroup')]"
