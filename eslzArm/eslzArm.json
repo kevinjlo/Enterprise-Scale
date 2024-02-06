@@ -948,16 +948,16 @@
         
         // Declaring scopes that will be used for optional deployments, such as platform components (monitoring, networking, identity), policy assignments, subscription placement etc.
         "scopes": {
-            "eslzRootManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue00'))]",
-            "platformManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue01'))]",
-            "managementManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue05'))]",
-            "connectivityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue06'))]",
-            "identityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue07'))]",
-            "lzsManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue02'))]",
-            "corpManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue09'))]",
-            "onlineManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue08'))]",
-            "decommissionedManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue04'))]",
-            "sandboxManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('guidValue03'))]"
+            "eslzRootManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').eslzRoot)]",
+            "platformManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').platform)]",
+            "managementManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').management)]",
+            "connectivityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').connectivity)]",
+            "identityManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').identity)]",
+            "lzsManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').lzs)]",
+            "corpManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').corp)]",
+            "onlineManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').online)]",
+            "decommissionedManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').decommissioned)]",
+            "sandboxManagementGroup": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('mgmtGroupUUIDs').sandboxes)]"
         },
         // Declaring root uris for external dependency repositories.
         "rootUris": {
@@ -1391,8 +1391,7 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                      "value": "[parameters('guidValue00')]"
                     }
                 }
             }
@@ -1423,20 +1422,20 @@
                         "value": "[parameters('telemetryOptOut')]"
                     },
                     "platformManagementGroup": {
-                        "value": "[parameters('guidValue01')]"
+                        "value": "[variables('mgmtGroupUUIDs').platform]"
                     },
                     "IdentityManagementGroup": {
-                        "value": "[parameters('guidValue07')]"
+                        "value": "[variables('mgmtGroupUUIDs').identity]"
                     },
                     "managementManagementGroup": {
-                        "value": "[parameters('guidValue05')]"
+                        "value": "[variables('mgmtGroupUUIDs').management]"
                     },
                     "connectivityManagementGroup": {
-                        "value": "[parameters('guidValue06')]"
+                        "value": "[variables('mgmtGroupUUIDs').connectivity]"
                     },
                     "LandingZoneManagementGroup": {
-                        "value": "[parameters('guidValue02')]"
-                    },
+                        "value": "[variables('mgmtGroupUUIDs').lzs]"
+			},
                     "enableAMBAConnectivity": {
                         "value": "[parameters('enableMonitorConnectivity')]"
                     },
@@ -1501,19 +1500,19 @@
                         "value": "[parameters('telemetryOptOut')]"
                     },
                     "platformManagementGroup": {
-                        "value": "[parameters('guidValue01')]"
+                        "value": "[variables('mgmtGroupUUIDs').platform]"
                     },
                     "IdentityManagementGroup": {
-                        "value": "[parameters('guidValue01')]"
+                        "value": "[variables('mgmtGroupUUIDs').platform]"
                     },
                     "managementManagementGroup": {
-                        "value": "[parameters('guidValue01')]"
+                        "value": "[variables('mgmtGroupUUIDs').platform]"
                     },
                     "connectivityManagementGroup": {
-                        "value": "[parameters('guidValue01')]"
+                        "value": "[variables('mgmtGroupUUIDs').platform]"
                     },
                     "LandingZoneManagementGroup": {
-                        "value": "[parameters('guidValue02')]"
+                        "value": "[variables('mgmtGroupUUIDs').lzs]"
                     },
                     "enableAMBAConnectivity": {
                         "value": "[parameters('enableMonitorConnectivity')]"
@@ -1602,7 +1601,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[parameters('guidValue05')]"
+                        "value": "[variables('mgmtGroupUUIDs').management]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('managementSubscriptionId')]"
@@ -1629,7 +1628,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[parameters('guidValue06')]"
+                        "value": "[variables('mgmtGroupUUIDs').connectivity]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('connectivitySubscriptionId')]"
@@ -1656,7 +1655,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[parameters('guidValue07')]"
+                        "value": "[variables('mgmtGroupUUIDs').identity]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('identitySubscriptionId')]"
@@ -3593,6 +3592,9 @@
                     },
                     "scope": {
                         "value": "[variables('scopes').lzsManagementGroup]"
+                    },
+                    "platformScope": {
+                        "value": "[variables('scopes').platformManagementGroup]"
                     }
                 }
             }
@@ -4548,7 +4550,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue08'))]"
+                        "value": "[variables('mgmtGroupUUIDs').online]"
                     },
                     "subscriptionId": {
                         "value": "[concat(parameters('onlineLzSubscriptionId')[copyIndex()])]"
@@ -4583,7 +4585,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue09'))]"
+                        "value": "[variables('mgmtGroupUUIDs').corp]"
                     },
                     "subscriptionId": {
                         "value": "[concat(parameters('corpLzSubscriptionId')[copyIndex()])]"
@@ -4618,7 +4620,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue09'))]"
+                        "value": "[variables('mgmtGroupUUIDs').corp]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('corpConnectedLzSubscriptionId')[copyIndex()].subs]"
@@ -4788,7 +4790,7 @@
                 },
                 "parameters": {
                     "targetManagementGroupId": {
-                        "value": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('guidValue01'))]"
+                        "value": "[variables('mgmtGroupUUIDs').platform]"
                     },
                     "subscriptionId": {
                         "value": "[parameters('singlePlatformSubscriptionId')]"
