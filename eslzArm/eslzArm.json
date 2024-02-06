@@ -3500,7 +3500,7 @@
                 }
             }
         },
-        {
+        /* {
             // Assigning ChangeTracking for Hyrbid VMs policy initiative to landing zone management group if condition is true
             "condition": "[and(or(not(empty(parameters('managementSubscriptionId'))), not(empty(parameters('singlePlatformSubscriptionId')))), equals(parameters('enableLogAnalytics'), 'Yes'), equals(parameters('enableChangeTracking'), 'Yes'))]",
             "type": "Microsoft.Resources/deployments",
@@ -3537,7 +3537,7 @@
 		    }
                 }
             }
-        },
+        }, */
         {
             // Assigning MDFC Defender for SQL AMA initiative to platform management group if condition is true
             "condition": "[and(or(not(empty(parameters('managementSubscriptionId'))), not(empty(parameters('singlePlatformSubscriptionId')))), equals(parameters('enableLogAnalytics'), 'Yes'), equals(parameters('enableAscForSqlOnVm'), 'DeployIfNotExists'))]",
