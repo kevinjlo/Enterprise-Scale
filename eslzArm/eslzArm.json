@@ -4325,8 +4325,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //2024-02-06-4:00//"value": "[parameters('guidValue00')]"
+                        //02-01-5:55//
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableDecommissioned'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -4353,8 +4354,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //2024-02-06-4:00//"value": "[parameters('guidValue00')]"
+                        //02-01-5:55//
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableSandbox'), 'Yes'), 'Default', 'DoNotEnforce')]"
