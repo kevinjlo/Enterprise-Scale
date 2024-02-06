@@ -54,7 +54,7 @@
                             "defaultValue": "",
                             "constraints": {
                                 "required": true,
-                                "regex": "^[a-z0-9A-Z-]{1,10}$",
+                                "regex": "^[a-z0-9A-Z-]{1,64}$",
                                 "validationMessage": "The prefix must be 1-10 characters."
                             }
                         }
