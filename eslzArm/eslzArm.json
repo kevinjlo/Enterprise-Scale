@@ -1312,7 +1312,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "guidValue00": {
                         "value": "[parameters('guidValue00')]"
@@ -1922,7 +1924,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "rgName": {
                         "value": "[variables('platformRgNames').mgmtRg]"
@@ -2052,7 +2056,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "logAnalyticsResourceId": {
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
@@ -2083,7 +2089,9 @@
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     }
                 }
             }
@@ -2107,7 +2115,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     }
                 }
             }
@@ -2183,7 +2193,9 @@
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "emailContactAsc": {
                         "value": "[parameters('emailContactAsc')]"
@@ -2255,7 +2267,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableAscForOssDb'), 'DeployIfNotExists'), 'Default', 'DoNotEnforce')]"
@@ -2282,7 +2296,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableAscForSql'), 'DeployIfNotExists'), 'Default', 'DoNotEnforce')]"
@@ -2309,7 +2325,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableMDEndpoints'), 'DeployIfNotExists'), 'Default', 'DoNotEnforce')]"
@@ -2392,7 +2410,9 @@
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "emailContactAsc": {
                         "value": "[parameters('emailContactAsc')]"
@@ -2537,7 +2557,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "ddosPlanResourceId": {
                         "value": "[variables('platformResourceIds').ddosProtectionResourceId]"
@@ -2633,7 +2655,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "ddosPlanResourceId": {
                         "value": "[variables('platformResourceIds').ddosProtectionResourceId]"
@@ -2711,7 +2735,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enableHub": {
                         "value": "[parameters('enableHub')]"
@@ -2864,7 +2890,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "location": {
                         "value": "[parameters('connectivityLocation')]"
@@ -2897,7 +2925,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "principalId": {
                         "value": "[if(equals(parameters('enablePrivateDnsZonesForLzs'), 'Yes'), reference(variables('deploymentNames').privateDnsPolicyDeploymentName).outputs.principalId.value, 'na')]"
@@ -2932,7 +2962,9 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleVmInsightsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -2973,7 +3005,9 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleVmInsightsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -3014,7 +3048,9 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleVmInsightsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -3056,7 +3092,9 @@
                     },
                     "topLevelManagementGroupPrefix": {
 // above not done
-                      "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -3096,7 +3134,9 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleVmInsightsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmHybridMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -3130,7 +3170,9 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleVmInsightsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmHybridMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -3162,7 +3204,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "Default"
@@ -3277,7 +3321,8 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleChangeTrackingResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
