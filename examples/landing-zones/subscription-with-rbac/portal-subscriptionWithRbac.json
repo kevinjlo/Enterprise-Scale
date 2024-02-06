@@ -32,7 +32,7 @@
 						"toolTip": "Use only allowed characters",
 						"constraints": {
 							"required": true,
-							"regex": "^[a-z0-9A-Z-]{1,10}$",
+							"regex": "^[a-z0-9A-Z-]{1,64}$",
 							"validationMessage": "The prefix must be 1-10 characters."
 						},
 						"visible": true
@@ -142,7 +142,7 @@
 						"toolTip": "Use only allowed characters",
 						"constraints": {
 							"required": true,
-							"regex": "^[a-z0-9A-Z-]{1,10}$",
+							"regex": "^[a-z0-9A-Z-]{1,64}$",
 							"validationMessage": "Only alphanumeric characters are allowed, and the value must be 1-10 characters long."
 						},
 						"visible": true
