@@ -2265,8 +2265,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        //02-06-13:00//
+			"value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     },
                     "enforcementMode": {
@@ -2294,8 +2295,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        //02-06-13:00//
+			"value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     },
                     "enforcementMode": {
@@ -2323,8 +2325,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        //02-06-13:00//
+			"value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     },
                     "enforcementMode": {
@@ -2408,8 +2411,9 @@
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('guidValue00')]"
+                        //02-06-13:00
+			//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     },
                     "emailContactAsc": {
