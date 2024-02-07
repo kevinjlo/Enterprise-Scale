@@ -8,6 +8,12 @@
                 "description": "Provide name of top management groups."
             }
         },
+        "serviceLevel": {
+            "value": "[parameters('serviceLevel')]"
+        },
+        "abbreviatedRegion": {
+            "value": "[parameters('abbreviatedRegion')]"
+        },
         "platformMgs": {
             "type": "array",
             "defaultValue": [
