@@ -5245,6 +5245,12 @@
                         "value": "[parameters('guidValue00')]"
                         //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
+                    },
                     "ddosPlanResourceId": {
                         "value": "[variables('platformResourceIds').ddosProtectionResourceId]"
                     },
@@ -5424,6 +5430,12 @@
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
                         //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                    },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "enableHub": {
                         "value": "[parameters('enableHub')]"
