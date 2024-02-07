@@ -142,7 +142,7 @@
         "vWanName": "[concat(parameters('topLevelManagementGroupPrefix'), '-vwan-', parameters('location'))]",
         "vpngwname": "[concat(parameters('topLevelManagementGroupPrefix'), '-vpngw-', parameters('location'))]",
         "erGwName": "[concat(parameters('topLevelManagementGroupPrefix'), '-ergw-', parameters('location'))]",
-        "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnethub')]",
+        "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet-hub')]",
         "vHubName": "[concat('vnet-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-hub')]",
         "azFwName": "[concat(parameters('topLevelManagementGroupPrefix'), '-fw-', parameters('location'))]",
         "azFwPolicyName": "[concat(parameters('topLevelManagementGroupPrefix'), '-azfwpolicy-', parameters('location'))]",

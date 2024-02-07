@@ -1169,7 +1169,8 @@
             "ddosRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-ddos')]",
             "privateDnsRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-privatedns')]",
             "identityVnetRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet-identity')]",
-            "lzVnetRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet')]"        },
+            "lzVnetRg": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet')]"
+        },
         // Declaring deterministic names for platform resources that will be created
         "platformResourceNames": {
             "logAnalyticsWorkspace": "[concat('log-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-mgmt')]",
@@ -4761,7 +4762,7 @@
                 }
             }
         },
-        /*{
+        {
             // Peering corp connected lz vnet to connectivity sub (when vwan is selected)
             "condition": "[and(equals(parameters('enableHub'), 'vwan'), not(empty(parameters('corpConnectedLzSubscriptionId'))))]",
             "type": "Microsoft.Resources/deployments",
@@ -4817,7 +4818,7 @@
                     }
                 }
             }
-        },*/
+        },
         /*
             **ESLZ Lite Only!**
             The following section represent optional deployments in case the user select to use a single dedicated subscription for platform resources.

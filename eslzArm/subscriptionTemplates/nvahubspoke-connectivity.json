@@ -129,7 +129,7 @@
     "variables": {
         "vpngwname": "[concat(parameters('topLevelManagementGroupPrefix'), '-vpngw-', parameters('location'))]",
         "erGwName": "[concat(parameters('topLevelManagementGroupPrefix'), '-ergw-', parameters('location'))]",
-        "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnethub')]",
+        "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet-hub')]",
         "hubName": "[concat('vnet-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-hub')]",
         "azVpnGwIpName": "[concat(variables('vpngwname'), '-pip')]",
         "azVpnGwAAIpName": "[concat(variables('vpngwname'), '-pip-002')]",
