@@ -9,10 +9,10 @@
             }
         },
         "serviceLevel": {
-            "value": "[parameters('serviceLevel')]"
+            "type": "string"
         },
         "abbreviatedRegion": {
-            "value": "[parameters('abbreviatedRegion')]"
+            "type": "string"
         },
         "platformMgs": {
             "type": "array",
