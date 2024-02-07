@@ -3563,11 +3563,8 @@
                         "value": "[if(equals(parameters('enableVmHybridMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
                     },
                     "scope": {
-                        "value": "[variables('scopes').lzsManagementGroup]"
-                    },
-                    "platformScope": {
                         "value": "[variables('scopes').platformManagementGroup]"
-		    }
+                    }
                 }
             }
         },
