@@ -2293,12 +2293,6 @@
                         //02-06-13:00//
                         "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
-                    },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableAscForOssDb'), 'DeployIfNotExists'), 'Default', 'DoNotEnforce')]"
                     }
@@ -2328,12 +2322,6 @@
                         //02-06-13:00//
 			"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
-                    },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableAscForSql'), 'DeployIfNotExists'), 'Default', 'DoNotEnforce')]"
                     }
@@ -2362,12 +2350,6 @@
                         //02-06-13:00//"value": "[parameters('guidValue00')]"
                         //02-06-13:00//
 			"value": "[parameters('enterpriseScaleCompanyPrefix')]"
-                    },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableMDEndpoints'), 'DeployIfNotExists'), 'Default', 'DoNotEnforce')]"
