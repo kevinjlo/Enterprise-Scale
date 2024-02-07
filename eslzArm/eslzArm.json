@@ -2437,9 +2437,14 @@
                     },
                     "topLevelManagementGroupPrefix": {
                         //02-06-13:00//"value": "[parameters('guidValue00')]"
-                        //02-06-13:00
-			//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
-
+                        //02-06-13:00//
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                    },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "emailContactAsc": {
                         "value": "[parameters('emailContactAsc')]"
