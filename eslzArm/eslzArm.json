@@ -1733,12 +1733,6 @@
                     "WorkspaceResourceId": {
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
-                    },
                     "WorkspaceLocation": {
                         "value": "[deployment().location]"
                     },
@@ -2500,12 +2494,6 @@
                 "parameters": {
                     "rgName": {
                         "value": "[variables('platformRgNames').ddosRg]"
-                    },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "location": {
                         "value": "[parameters('connectivityLocation')]"
