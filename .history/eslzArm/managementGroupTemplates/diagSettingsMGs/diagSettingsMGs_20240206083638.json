@@ -6,14 +6,8 @@
             "type": "string",
             "metadata": {
                 "description": "Provide the resourceId to the central Log Analytics workspace."
-            },
-            "serviceLevel": {
-                "value": "[parameters('serviceLevel')]"
-            },
-            "abbreviatedRegion": {
-                "value": "[parameters('abbreviatedRegion')]"
             }
-        }     
+         }     
     },
     "variables": {
     },
