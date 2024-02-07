@@ -9,6 +9,12 @@
                 "description": "Provide email address for Azure Security Center contact details"
             }
         },
+        "serviceLevel": {
+          "type": "string"
+        },
+        "abbreviatedRegion": {
+          "type": "string"
+        },
         "pricingTierVMs": {
             "type": "string",
             "metadata": {

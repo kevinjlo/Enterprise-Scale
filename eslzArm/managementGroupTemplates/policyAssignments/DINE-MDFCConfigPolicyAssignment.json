@@ -8,6 +8,12 @@
                 "description": "Provide the ESLZ company prefix to the intermediate root management group containing the policy definitions."
             }
         },
+        "serviceLevel": {
+          "type": "string"
+        },
+        "abbreviatedRegion": {
+          "type": "string"
+        },
         "enforcementMode": {
             "type": "string",
             "allowedValues": [
