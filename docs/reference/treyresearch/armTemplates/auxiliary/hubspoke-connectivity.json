@@ -150,7 +150,7 @@
         "rbacNetworkContributor": "4d97b98b-1d4f-4787-a291-c67834d212e7",
         "vpngwname": "[concat(parameters('topLevelManagementGroupPrefix'), '-vpngw-', parameters('location'))]",
         "erGwName": "[concat(parameters('topLevelManagementGroupPrefix'), '-ergw-', parameters('location'))]",
-        "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-connectivity')]",
+        "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-vnet-connectivity')]",
         "dDoSRgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-ddos')]",
         "dDoSName": "[concat(parameters('topLevelManagementGroupPrefix'), '-ddos-', parameters('location'))]",
         "azFwPolicyName": "[concat(parameters('topLevelManagementGroupPrefix'), '-azfwpolicy-', parameters('location'))]",
