@@ -3031,7 +3031,12 @@
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
                         //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
-
+                    },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -3074,7 +3079,6 @@
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
                         //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
-
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -5241,6 +5245,12 @@
                         "value": "[parameters('guidValue00')]"
                         //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
+                    },
                     "ddosPlanResourceId": {
                         "value": "[variables('platformResourceIds').ddosProtectionResourceId]"
                     },
@@ -5420,6 +5430,12 @@
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
                         //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                    },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "enableHub": {
                         "value": "[parameters('enableHub')]"
