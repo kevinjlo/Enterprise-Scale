@@ -1558,6 +1558,7 @@
                 }
             }
         },
+        /*  2024-02-07, commented to speed-up the testing of other fixes.
         {
             // One of Azure's untold stories.....
             "type": "Microsoft.Resources/deployments",
@@ -1585,6 +1586,7 @@
                 }
             }
         },
+        */
         /*
             The following deployments will organize the dedicated platform subscriptions into their respective management groups
         */
