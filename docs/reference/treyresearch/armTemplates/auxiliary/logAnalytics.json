@@ -33,7 +33,7 @@
         "workspaceRegion": "[deployment().location]",
         "automationAccountName": "[concat(parameters('topLevelManagementGroupPrefix'), '-a-', parameters('managementSubscriptionId'))]",
         "automationRegion": "[deployment().location]",
-        "rgName": "[concat(parameters('topLevelManagementGroupPrefix'), '-mgmt')]",
+        "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-mgmt')]",
         "resourceDeploymentName": "[take(concat('EntScale-mgmt', deployment().name), 64)]"
     },
     "resources": [
