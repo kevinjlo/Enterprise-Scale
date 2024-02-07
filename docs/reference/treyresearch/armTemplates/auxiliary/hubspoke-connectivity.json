@@ -151,7 +151,7 @@
         "vpngwname": "[concat(parameters('topLevelManagementGroupPrefix'), '-vpngw-', parameters('location'))]",
         "erGwName": "[concat(parameters('topLevelManagementGroupPrefix'), '-ergw-', parameters('location'))]",
         "rgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-connectivity')]",
-        "dDoSRgName": "[concat(parameters('topLevelManagementGroupPrefix'), '-ddos')]",
+        "dDoSRgName": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-ddos')]",
         "dDoSName": "[concat(parameters('topLevelManagementGroupPrefix'), '-ddos-', parameters('location'))]",
         "azFwPolicyName": "[concat(parameters('topLevelManagementGroupPrefix'), '-azfwpolicy-', parameters('location'))]",
         "hubName": "[concat('vnet-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-hub')]",
