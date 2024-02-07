@@ -8,10 +8,10 @@
                 "description": "Provide the resourceId to the central Log Analytics workspace."
             },
             "serviceLevel": {
-                "value": "[parameters('serviceLevel')]"
+                "type": "string"
             },
             "abbreviatedRegion": {
-                "value": "[parameters('abbreviatedRegion')]"
+                "type": "string"
             }
         }     
     },
