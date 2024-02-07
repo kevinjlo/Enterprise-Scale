@@ -1727,6 +1727,12 @@
                     "WorkspaceResourceId": {
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
+                    },
                     "WorkspaceLocation": {
                         "value": "[deployment().location]"
                     },
@@ -2562,7 +2568,12 @@
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
                         //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
-
+                    },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "ddosPlanResourceId": {
                         "value": "[variables('platformResourceIds').ddosProtectionResourceId]"
