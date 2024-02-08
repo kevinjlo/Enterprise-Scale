@@ -1773,6 +1773,47 @@
                 }
             }
         },
+
+//testing order.  this section came from 2 sections below
+        {
+            // Deploying user assigned identity if condition is true
+            "condition": "[and(equals(parameters('enableLogAnalytics'), 'Yes'), not(empty(variables('subscriptionIds'))))]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-10-01",
+            "name": "[concat(variables('deploymentNames').userAssignedIdentityDeploymentName, copyIndex())]",
+            "location": "[deployment().location]",
+            "subscriptionId": "[variables('subscriptionIds')[copyIndex()]]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
+                "userAssignedIdentityRg"
+            ],
+            "copy": {
+                "name": "userAssignedIdentity",
+                "count": "[length(variables('subscriptionIds'))]"
+            },
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "[variables('deploymentUris').userAssignedIdentity]"
+                },
+                "parameters": {
+                    "location": {
+                        "value": "[deployment().location]"
+                    },
+                    "userAssignedIdentityName": {
+                        "value": "[variables('platformResourceNames').userAssignedIdentity]"
+                    },
+                    "userAssignedIdentityResourceGroup": {
+                        "value": "[parameters('userAssignedIdentityResourceGroup')]"
+                    }
+                }
+            }
+        },
+
+
+
+
         {
             // Deploying Data Collection Rule for Mdfc Defender for SQL if condition is true
             "condition": "[and(not(empty(parameters('managementSubscriptionId'))), equals(parameters('enableLogAnalytics'), 'Yes'), equals(parameters('enableAscForSqlOnVm'), 'DeployIfNotExists'))]",
@@ -1840,41 +1881,7 @@
                 }
             }
         },
-        {
-            // Deploying user assigned identity if condition is true
-            "condition": "[and(equals(parameters('enableLogAnalytics'), 'Yes'), not(empty(variables('subscriptionIds'))))]",
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2020-10-01",
-            "name": "[concat(variables('deploymentNames').userAssignedIdentityDeploymentName, copyIndex())]",
-            "location": "[deployment().location]",
-            "subscriptionId": "[variables('subscriptionIds')[copyIndex()]]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
-                "userAssignedIdentityRg"
-            ],
-            "copy": {
-                "name": "userAssignedIdentity",
-                "count": "[length(variables('subscriptionIds'))]"
-            },
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "contentVersion": "1.0.0.0",
-                    "uri": "[variables('deploymentUris').userAssignedIdentity]"
-                },
-                "parameters": {
-                    "location": {
-                        "value": "[deployment().location]"
-                    },
-                    "userAssignedIdentityName": {
-                        "value": "[variables('platformResourceNames').userAssignedIdentity]"
-                    },
-                    "userAssignedIdentityResourceGroup": {
-                        "value": "[parameters('userAssignedIdentityResourceGroup')]"
-                    }
-                }
-            }
-        },
+
         {
             // Deploying Sentinel to Log Analytics workspace if condition is true
             "condition": "[and(equals(parameters('enableLogAnalytics'), 'Yes'), not(empty(parameters('managementSubscriptionId'))), equals(parameters('enableSecuritySolution'), 'Yes'))]",
