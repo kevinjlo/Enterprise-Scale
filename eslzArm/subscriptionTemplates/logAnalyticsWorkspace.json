@@ -5,7 +5,13 @@
       "rgName": {
         "type": "String"
       },
-      "workspaceName": {
+        "serviceLevel": {
+          "type": "string"
+        },
+        "abbreviatedRegion": {
+          "type": "string"
+        },
+        "workspaceName": {
         "type": "String"
       },
       "workspaceRegion": {
