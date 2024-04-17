@@ -5307,7 +5307,10 @@
                     "uri": "[variables('deploymentUris').nvaConnectivityHub]"
                 },
                 "parameters": {
-                    "topLevelManagementGroupPrefix": {
+		    "serviceLevel": {
+		      "value": "[parameters('serviceLevel')]"
+		    },
+		    "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
                         //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
