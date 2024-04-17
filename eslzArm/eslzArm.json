@@ -930,7 +930,7 @@
             {
                 "name": "mgmtGroupsESLiteArray",
                 "count": "[length(items(variables('mgmtGroups')))]",
-                "input": "[items(variables('mgmtGroupUUIDs'))[copyIndex('mgmtGroupsArray')].value]"
+                "input": "[items(variables('mgmtGroupUUIDs'))[copyIndex('mgmtGroupsESLiteArray')].value]"
             }
         ],
         
