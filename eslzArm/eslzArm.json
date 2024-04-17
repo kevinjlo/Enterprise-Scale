@@ -5310,6 +5310,9 @@
 		    "serviceLevel": {
 		      "value": "[parameters('serviceLevel')]"
 		    },
+	                "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
+                    },
 		    "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
                         //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
