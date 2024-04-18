@@ -8,12 +8,6 @@
                 "description": "Provide subscription id for the dedicated connectivity subscription"
             }
         },
-        "serviceLevel": {
-          "type": "string"
-        },
-        "abbreviatedRegion": {
-          "type": "string"
-        },
         "location": {
             "type": "string",
             "metadata": {
