@@ -845,7 +845,7 @@
 
         "userAssignedIdentityResourceGroup": {
             "type": "string",
-            "defaultValue": "[take(concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-identities'), 64)]",
+            "defaultValue": "[concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-identities')]",
             "maxLength": 90,
             "metadata": {
                 "description": "Name of the resource group to be created for the User Assigned Managed Identity in each subscription."
