@@ -4524,7 +4524,13 @@
                     "vNetRgName": {
                         "value": "[variables('platformRgNames').identityVnetRg]"
                     },
-                    "vNetName": {
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
+                    },
+			"vNetName": {
                         "value": "[take(concat(variables('platformResourceNames').identityVnet), 64)]"
                     },
                     "vNetLocation": {
@@ -4734,7 +4740,13 @@
                     "vNetRgName": {
                         "value": "[variables('platformRgNames').lzVnetRg]"
                     },
-                    "vNetName": {
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
+                    },
+			"vNetName": {
                         "value": "[take(concat(variables('platformResourceNames').lzVnet, '-', parameters('corpConnectedLzSubscriptionId')[copyIndex()].subs), 64)]"
                     },
                     "vNetLocation": {
