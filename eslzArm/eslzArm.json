@@ -5035,7 +5035,7 @@
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
                         //"value": "[parameters('guidValue00')]"
-                        02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "rgName": {
                         "value": "[variables('platformRgNames').mgmtRg]"
