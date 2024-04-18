@@ -88,7 +88,7 @@
               "displayName": "[parameters('topLevelManagementGroupPrefix')]",
                 "details": {
                     "parent": {
-                    "id": "[tenantResourceId('Microsoft.Management/managementGroups', '292d1152-50ec-4b7b-b37b-2b579c26bb35')]"
+                    "id": "[tenantResourceId('Microsoft.Management/managementGroups', 'd5b8820c-9cf8-4e20-84c4-a2806d2ddec6')]"
                     }
                 }
             }
