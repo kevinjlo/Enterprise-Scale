@@ -4847,19 +4847,59 @@
             "apiVersion": "2019-10-01",
             "name": "[variables('esLiteDeploymentNames').mgmtGroupLiteDeploymentName]",
             "location": "[deployment().location]",
+
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
                     "contentVersion": "1.0.0.0",
-                    "uri": "[variables('deploymentUris').managementGroupsLite]"
+                    "uri": "[variables('deploymentUris').managementGroups]"
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                    },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
+                    },
+                    "guidValue00": {
                         "value": "[parameters('guidValue00')]"
-                        //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                    },
+                    "guidValue01": {
+                        "value": "[parameters('guidValue01')]"
+                    },
+                    "guidValue02": {
+                        "value": "[parameters('guidValue02')]"
+                    },
+                    "guidValue03": {
+                        "value": "[parameters('guidValue03')]"
+                    },
+                    "guidValue04": {
+                        "value": "[parameters('guidValue04')]"
+                    },
+                    "guidValue05": {
+                        "value": "[parameters('guidValue05')]"
+                    },
+                    "guidValue06": {
+                        "value": "[parameters('guidValue06')]"
+                    },
+                    "guidValue07": {
+                        "value": "[parameters('guidValue07')]"
+                    },
+                    "guidValue08": {
+                        "value": "[parameters('guidValue08')]"
+                    },
+                    "guidValue09": {
+                        "value": "[parameters('guidValue09')]"
+                    },
+                    "guidValue10": {
+                        "value": "[parameters('guidValue10')]"
                     }
                 }
             }
+
         },
         /*
             Note: ES Lite only: the following deployments will organize the dedicated platform subscription into the dedicated management groups
@@ -5209,6 +5249,7 @@
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').ddosHubLitePolicyDeploymentName)]"
             ],
             "location": "[deployment().location]",
+
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -5218,7 +5259,13 @@
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('guidValue00')]"
-                        //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                    },
+                    "serviceLevel": {
+                        "value": "[parameters('serviceLevel')]"
+                    },
+                    "abbreviatedRegion": {
+                        "value": "[parameters('abbreviatedRegion')]"
                     },
                     "ddosPlanResourceId": {
                         "value": "[variables('platformResourceIds').ddosProtectionResourceId]"
@@ -5245,7 +5292,7 @@
                         "value": "[parameters('connectivityLocation')]"
                     },
                     "connectivitySubscriptionId": {
-                        "value": "[parameters('singlePlatformSubscriptionId')]"
+                        "value": "[parameters('connectivitySubscriptionId')]"
                     },
                     "subnetMaskForAzFw": {
                         "value": "[parameters('subnetMaskForAzFw')]"
@@ -5288,6 +5335,8 @@
                     }
                 }
             }
+
+
         },
         /*
             Note: ES Lite only: deploys virtual hub (NVA)
