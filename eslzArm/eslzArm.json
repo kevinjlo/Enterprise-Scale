@@ -824,14 +824,8 @@
                 "description": "The current date and time using the utcNow function. Used for deployment name uniqueness"
             }
         },
-        "userAssignedIdentityResourceGroup": {
-            "type": "string",
-            "defaultValue": "rg-shs-cace-identities",
-            "maxLength": 90,
-            "metadata": {
-                "description": "Name of the resource group to be created for the User Assigned Managed Identity in each subscription."
-            }
-        },
+
+
         "serviceLevel": {
             "type": "string",
             "defaultValue": "shs",
@@ -842,10 +836,19 @@
         },
         "abbreviatedRegion": {
             "type": "string",
-            "defaultValue": "cace",
+            "defaultValue": "",
             "maxLength": 4,
             "metadata": {
                 "description": "Provide an abbreviated Region (max 4 characters) for the service level ('cace', 'caea', 'usw2', etc)."
+            }
+        },
+
+        "userAssignedIdentityResourceGroup": {
+            "type": "string",
+            "defaultValue": "[take(concat('rg-', parameters('serviceLevel'), '-', parameters('abbreviatedRegion'), '-identities'), 64)]",
+            "maxLength": 90,
+            "metadata": {
+                "description": "Name of the resource group to be created for the User Assigned Managed Identity in each subscription."
             }
         },
         "guidValue00": {
@@ -5034,7 +5037,7 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        //"value": "[parameters('guidValue00')]"
+                        // "value": "[parameters('guidValue00')]"
                         "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "rgName": {
