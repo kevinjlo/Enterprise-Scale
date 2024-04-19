@@ -1827,7 +1827,7 @@
                         "value": "[parameters('userAssignedIdentityResourceGroup')]"
                     },
                     "location": {
-                        "value": "[deployment().location]"
+                        "value": "[parameters('connectivityLocation')]"
                     }
                 }
             }
@@ -1857,7 +1857,7 @@
                 },
                 "parameters": {
                     "location": {
-                        "value": "[deployment().location]"
+                        "value": "[parameters('connectivityLocation')]"
                     },
                     "userAssignedIdentityName": {
                         "value": "[variables('platformResourceNames').userAssignedIdentity]"
@@ -3246,7 +3246,7 @@
                         "value": "[variables('platformResourceNames').userAssignedIdentity]"
                     },
                     "location": {
-                        "value": "[deployment().location]"
+                        "value": "[parameters('connectivityLocation')]"
                     }
                 }
             }
