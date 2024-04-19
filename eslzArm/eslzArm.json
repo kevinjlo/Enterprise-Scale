@@ -836,7 +836,7 @@
         },
         "abbreviatedRegion": {
             "type": "string",
-            "defaultValue": "",
+            "defaultValue": "caea",
             "maxLength": 4,
             "metadata": {
                 "description": "Provide an abbreviated Region (max 4 characters) for the service level ('cace', 'caea', 'usw2', etc)."
