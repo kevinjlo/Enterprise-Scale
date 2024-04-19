@@ -4534,13 +4534,7 @@
                     "vNetRgName": {
                         "value": "[variables('platformRgNames').identityVnetRg]"
                     },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
-                    },
-			"vNetName": {
+                    "vNetName": {
                         "value": "[take(concat(variables('platformResourceNames').identityVnet), 64)]"
                     },
                     "vNetLocation": {
@@ -4756,13 +4750,7 @@
                     "vNetRgName": {
                         "value": "[variables('platformRgNames').lzVnetRg]"
                     },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
-                    },
-			"vNetName": {
+                    "vNetName": {
                         "value": "[take(concat(variables('platformResourceNames').lzVnet, '-', parameters('corpConnectedLzSubscriptionId')[copyIndex()].subs), 64)]"
                     },
                     "vNetLocation": {
@@ -4819,13 +4807,7 @@
                     "vNetRgName": {
                         "value": "[variables('platformRgNames').lzVnetRg]"
                     },
-                    "serviceLevel": {
-                        "value": "[parameters('serviceLevel')]"
-                    },
-                    "abbreviatedRegion": {
-                        "value": "[parameters('abbreviatedRegion')]"
-                    },
-			"vNetName": {
+                    "vNetName": {
                         "value": "[take(concat(variables('platformResourceNames').lzVnet, '-', parameters('corpConnectedLzSubscriptionId')[copyIndex()].subs), 64)]"
                     },
                     "vNetLocation": {
