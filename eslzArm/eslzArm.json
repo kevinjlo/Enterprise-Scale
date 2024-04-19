@@ -1973,10 +1973,7 @@
                     "uri": "[variables('deploymentUris').diagnosticSettingsforManagementGroups]"
                 },
                 "parameters": {
-		        "serviceLevel": {
-			    "value": "[parameters('serviceLevel')]"
-		        },
-			"logAnalyticsResourceId": {
+                    "logAnalyticsResourceId": {
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     }
                 }
