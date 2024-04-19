@@ -3554,10 +3554,12 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleChangeTrackingResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        //2024-02-06-13:53//
-                        "value": "[parameters('guidValue00')]"
+                        //2024-02-06-13:53//"value": "[parameters('guidValue00')]"
                         //02-01-5:55//
                         //  2024-04-19, swapped comment   //"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //  2024-04-19, swapped back   //"value": "[parameters('guidValue00')]"
+                "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmHybridMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
