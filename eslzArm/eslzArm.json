@@ -1800,8 +1800,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[concat(variables('deploymentNames').userAssignedIdentityRgDeploymentName, copyIndex())]",
-            "subscriptionId": "[variables('subscriptionIds')[copyIndex()]]",
-            //  2024-04-19, switched these 2 lines  //  "subscriptionId": "[parameters('managementSubscriptionId')]",
+            "subscriptionId": "[parameters('managementSubscriptionId')]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
