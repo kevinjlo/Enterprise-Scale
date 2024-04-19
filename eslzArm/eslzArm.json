@@ -1800,8 +1800,8 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[concat(variables('deploymentNames').userAssignedIdentityRgDeploymentName, copyIndex())]",
-            //"subscriptionId": "[variables('subscriptionIds')[copyIndex()]]",
-            "subscriptionId": "[parameters('managementSubscriptionId')]",
+            "subscriptionId": "[variables('subscriptionIds')[copyIndex()]]",
+            //  2024-04-19, switched these 2 lines  //  "subscriptionId": "[parameters('managementSubscriptionId')]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
@@ -1922,8 +1922,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        //02-06-13:00//"value": "[parameters('guidValue00')]"
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//
+                        "value": "[parameters('guidValue00')]"
+                        //  2024-04-19, swapped comment   //"value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     },
                     "rgName": {
@@ -2090,8 +2091,9 @@
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        //02-06-13:00//"value": "[parameters('guidValue00')]"
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //02-06-13:00//
+                        "value": "[parameters('guidValue00')]"
+                        //  2024-04-19, swapped comment   //"value": "[parameters('enterpriseScaleCompanyPrefix')]"
 
                     }
                 }
@@ -2417,9 +2419,10 @@
                         "value": "[variables('platformResourceIds').logAnalyticsResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        //02-06-13:00//"value": "[parameters('guidValue00')]"
                         //02-06-13:00//
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //02-06-13:00//
+                        //  2024-04-19, swapped comment   //"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "serviceLevel": {
                         "value": "[parameters('serviceLevel')]"
@@ -3551,9 +3554,10 @@
                         "value": "[variables('platformResourceIds').dataCollectionRuleChangeTrackingResourceId]"
                     },
                     "topLevelManagementGroupPrefix": {
-                        //2024-02-06-13:53//"value": "[parameters('guidValue00')]"
+                        //2024-02-06-13:53//
+                        "value": "[parameters('guidValue00')]"
                         //02-01-5:55//
-		        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //  2024-04-19, swapped comment   //"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "enforcementMode": {
                         "value": "[if(equals(parameters('enableVmHybridMonitoring'), 'Yes'), 'Default', 'DoNotEnforce')]"
@@ -4489,8 +4493,9 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        "value": "[parameters('guidValue00')]"
-                        //02-01-5:55//"value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        //  2024-04-19, swapped comment   //"value": "[parameters('guidValue00')]"
+                        //02-01-5:55//
+                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "enforcementMode": {
                         "value": "Default"
@@ -5037,8 +5042,8 @@
                 },
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
-                        // "value": "[parameters('guidValue00')]"
-                        "value": "[parameters('enterpriseScaleCompanyPrefix')]"
+                        "value": "[parameters('guidValue00')]"
+                        //  2024-04-19, swapped comment   //"value": "[parameters('enterpriseScaleCompanyPrefix')]"
                     },
                     "rgName": {
                         "value": "[variables('platformRgNames').mgmtRg]"
