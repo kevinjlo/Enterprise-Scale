@@ -1292,7 +1292,7 @@
   "apiVersion": "2020-10-01",
   "kind": "AzurePowerShell",
   "name": "WaitSection1",
-  "location": "[parameters('connectivityLocation')]",
+  "location": "[deployment().location]",
   "properties": {
     "azPowerShellVersion": "3.0",
     "scriptContent": "start-sleep -Seconds 300",
