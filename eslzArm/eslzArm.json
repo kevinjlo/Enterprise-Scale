@@ -4930,7 +4930,7 @@
   "kind": "AzurePowerShell",
   "name": "WaitSection",
   "location": "[deployment().location]",
-  "scope": "[variables('scopes').platformManagementGroup]",
+  "scope": "[variables('platformRgNames').mgmtRg]",
   "properties": {
     "azPowerShellVersion": "3.0",
     "scriptContent": "start-sleep -Seconds 300",
