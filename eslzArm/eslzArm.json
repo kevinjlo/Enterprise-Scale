@@ -4932,7 +4932,7 @@
   "location": "[deployment().location]",
   "dependsOn": [
 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').userAssignedIdentity)]",
-"[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').automationAccount)]"
+"[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').userAssignedIdentityDeploymentName)]"
         ],
   "properties": {
     "azPowerShellVersion": "3.0",
