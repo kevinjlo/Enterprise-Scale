@@ -4923,23 +4923,6 @@
             Note: ES Lite only: the following deployment will create Log Analytics to the platform subscription
         */
 
-
-{
-  "type": "Microsoft.Resources/deploymentScripts",
-  "apiVersion": "2020-10-01",
-  "kind": "AzurePowerShell",
-  "name": "WaitSection",
-  "location": "[deployment().location]",
-  "scope": "[variables('platformRgNames').mgmtRg]",
-  "properties": {
-    "azPowerShellVersion": "3.0",
-    "scriptContent": "start-sleep -Seconds 300",
-    "cleanupPreference": "Always",
-    "retentionInterval": "PT1H"
-  }
-},
-
-
         {
             // Deploying Log Analytics workspace to platform subscription if condition is true
             "condition": "[and(equals(parameters('enableLogAnalytics'), 'Yes'), not(empty(parameters('singlePlatformSubscriptionId'))))]",
@@ -4950,8 +4933,7 @@
             "subscriptionId": "[parameters('singlePlatformSubscriptionId')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('esliteDeploymentNames').platformLiteSubscriptionPlacement)]",
-                "policyCompletion",
-                "WaitSection"
+                "policyCompletion"
             ],
             "properties": {
                 "mode": "Incremental",
