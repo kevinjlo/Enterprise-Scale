@@ -4931,7 +4931,6 @@
   "name": "WaitSection",
   "location": "[deployment().location]",
   "dependsOn": [
-"[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').userAssignedIdentity)]",
 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').userAssignedIdentityDeploymentName)]"
         ],
   "properties": {
