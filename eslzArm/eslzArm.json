@@ -1300,6 +1300,19 @@
     "retentionInterval": "PT1H"
   }
 },
+{
+  "type": "Microsoft.Resources/deploymentScripts",
+  "apiVersion": "2020-10-01",
+  "kind": "AzurePowerShell",
+  "name": "WaitSection2",
+  "location": "[deployment().location]",
+  "properties": {
+    "azPowerShellVersion": "9.0",
+    "scriptContent": "start-sleep -Seconds 300",
+    "cleanupPreference": "Always",
+    "retentionInterval": "PT1H"
+  }
+},
 
         /*
             The following deployment will create the management group structure for ESLZ and ensure the sustainable, scalable architecture
