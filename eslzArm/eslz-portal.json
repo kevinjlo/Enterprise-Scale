@@ -149,7 +149,7 @@
                             "type": "Microsoft.Common.TextBox",
                             "label": "region (cace, caea, etc)",
                             "toolTip": "",
-                            "defaultValue": "cace",
+                            "defaultValue": "caea",
                             "constraints": {
                                 "required": true,
                                 "regex": "^[a-z0-9A-Z-]{1,4}$",
