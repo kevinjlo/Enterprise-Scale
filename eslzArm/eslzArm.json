@@ -4930,9 +4930,6 @@
   "kind": "AzurePowerShell",
   "name": "WaitSection",
   "location": "[deployment().location]",
-  "dependsOn": [
-"[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').userAssignedIdentityDeploymentName)]"
-        ],
   "properties": {
     "azPowerShellVersion": "3.0",
     "scriptContent": "start-sleep -Seconds 300",
