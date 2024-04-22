@@ -1287,33 +1287,6 @@
     },
     "resources": [
 
-{
-  "type": "Microsoft.Resources/deploymentScripts",
-  "apiVersion": "2020-10-01",
-  "kind": "AzurePowerShell",
-  "name": "WaitSection1",
-  "location": "[deployment().location]",
-  "properties": {
-    "azPowerShellVersion": "9.0",
-    "scriptContent": "start-sleep -Seconds 300",
-    "cleanupPreference": "Always",
-    "retentionInterval": "PT1H"
-  }
-},
-{
-  "type": "Microsoft.Resources/deploymentScripts",
-  "apiVersion": "2020-10-01",
-  "kind": "AzurePowerShell",
-  "name": "WaitSection2",
-  "location": "[deployment().location]",
-  "properties": {
-    "azPowerShellVersion": "9.0",
-    "scriptContent": "start-sleep -Seconds 300",
-    "cleanupPreference": "Always",
-    "retentionInterval": "PT1H"
-  }
-},
-
         /*
             The following deployment will create the management group structure for ESLZ and ensure the sustainable, scalable architecture
         */
@@ -4187,8 +4160,7 @@
             "scope": "[variables('scopes').lzsManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
-                "policyCompletion",
-                "WaitSection1"
+                "policyCompletion"
             ],
             "properties": {
                 "mode": "Incremental",
@@ -4510,8 +4482,7 @@
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion",
-                "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').identitySubscriptionPlacement)]",
-                "WaitSection1"
+                "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').identitySubscriptionPlacement)]"
             ],
             "properties": {
                 "mode": "Incremental",
