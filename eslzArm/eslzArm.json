@@ -1293,7 +1293,6 @@
   "kind": "AzurePowerShell",
   "name": "WaitSection1",
   "location": "[deployment().location]",
-  "scope": "/subscriptions/3be2dc05-a260-499f-86be-a600630efca9/resourceGroups/NetworkWatcherRG",
   "properties": {
     "azPowerShellVersion": "3.0",
     "scriptContent": "start-sleep -Seconds 300",
