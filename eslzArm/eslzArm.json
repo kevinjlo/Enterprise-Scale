@@ -3944,7 +3944,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('deploymentNames').mgmtFromInternetPolicyDeploymentName]",
-            "scope": "[variables('scopes').lzsManagementGroup]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion"
@@ -5668,7 +5668,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[variables('esLitedeploymentNames').mgmtFromInternetIdentityLitePolicyDeploymentName]",
-            "scope": "[variables('scopes').platformManagementGroup]",
+            "scope": "[variables('scopes').eslzRootManagementGroup]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "policyCompletion",
