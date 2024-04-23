@@ -1801,7 +1801,8 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2020-10-01",
             "name": "[concat(variables('deploymentNames').userAssignedIdentityRgDeploymentName, copyIndex())]",
-            "subscriptionId": "[parameters('managementSubscriptionId')]",
+            //2024-04-23  "subscriptionId": "[parameters('managementSubscriptionId')]",
+            "subscriptionId": "[parameters('singlePlatformSubscriptionId')]",
             "location": "[deployment().location]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtSubscriptionPlacement)]",
@@ -1840,7 +1841,8 @@
             "name": "[concat(variables('deploymentNames').userAssignedIdentityDeploymentName, copyIndex())]",
             "location": "[deployment().location]",
             //"subscriptionId": "[variables('subscriptionIds')[copyIndex()]]",
-            "subscriptionId": "[parameters('managementSubscriptionId')]",
+            //2024-04-23  "subscriptionId": "[parameters('managementSubscriptionId')]",
+            "subscriptionId": "[parameters('singlePlatformSubscriptionId')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').monitoringDeploymentName)]",
                 "userAssignedIdentityRg"
