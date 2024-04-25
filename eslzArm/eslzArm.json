@@ -4497,7 +4497,7 @@
                         //  2024-02-01//  "value": "[parameters('enterpriseScaleCompanyPrefix')]"
                         //  2024-04-19//  "value": "[parameters('guidValue00')]"
                         //  2024-04-25//  "value": "[parameters('enterpriseScaleCompanyPrefix')]"
-                        "value": "[parameters('guidValue07')]"
+                        "value": "[parameters('guidValue00')]"
                     },
                     "enforcementMode": {
                         "value": "Default"
